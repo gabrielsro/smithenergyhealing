@@ -144,3 +144,13 @@ section {
 #contact {
   background-color: #8fbc8f;
 }
+
+@media only screen and (max-width: 600px) {
+  .sloganContainer {
+    height: 20vh;
+  }
+
+  .cardContainerHome {
+    grid-template-columns: 1fr;
+  }
+}
