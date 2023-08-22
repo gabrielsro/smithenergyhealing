@@ -19,12 +19,17 @@ const testimonialList = [
 export default (container) => {
   const testimonialListHtml = testimonialList.map((t) => {
     const message = document.createElement("p");
+    message.classList.add("testimonialMessage");
     const author = document.createElement("p");
-    message.innerText = t.message;
+    message.innerText = `"${t.message}"`;
     author.innerText = t.author;
     const testimonialContainer = document.createElement("div");
+    const authorContainer = document.createElement("div");
+    authorContainer.classList.add("authorContainer");
+    authorContainer.appendChild(author);
+    testimonialContainer.classList.add("testimonialContainer");
     testimonialContainer.appendChild(message);
-    testimonialContainer.appendChild(author);
+    testimonialContainer.appendChild(authorContainer);
     testimonialContainer.classList.add("invisible");
     return testimonialContainer;
   });
