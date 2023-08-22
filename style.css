@@ -36,7 +36,7 @@ a:hover {
 }
 
 section {
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .pageTitle {
@@ -50,8 +50,9 @@ section {
   padding-left: 10px;
   padding-right: 10px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 4px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 10px;
+  align-self: end;
 }
 
 .cardHome {
@@ -82,7 +83,6 @@ section {
 .sloganContainer {
   padding-left: 40px;
   padding-top: 50px;
-  height: 54vh;
 
   color: white;
 }
@@ -91,7 +91,7 @@ section {
   display: grid;
   place-content: center;
   height: 100%;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
 }
 
@@ -120,8 +120,11 @@ section {
 
 #home {
   background-image: url(./images/beach1.jpg);
-  background-size: 100vw 100vh;
+  background-size: cover;
   background-repeat: no-repeat;
+  display: grid;
+  grid-template-rows: 15% 15% 70%;
+  padding-bottom: 25px;
 }
 
 #about {
@@ -130,11 +133,15 @@ section {
 
 #products {
   background-image: url(./images/path1.jpg);
-  background-size: 100vw 100vh;
+  background-size: cover;
   background-repeat: no-repeat;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
   color: white;
+  display: grid;
+  grid-template-rows: auto auto;
+  min-height: 100vh;
 }
 
 #blog {
@@ -145,12 +152,8 @@ section {
   background-color: #8fbc8f;
 }
 
-@media only screen and (max-width: 600px) {
-  .sloganContainer {
-    height: 20vh;
-  }
-
-  .cardContainerHome {
-    grid-template-columns: 1fr;
+@media only screen and (max-width: 500px) {
+  #home {
+    grid-template-rows: auto 50vh auto;
   }
 }
